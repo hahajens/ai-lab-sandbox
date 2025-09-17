@@ -1,0 +1,82 @@
+1. Utgångspunkt – skalarprodukt
+---------------------------------
+Skalarprodukten mellan två vektorer A och B är:
+
+A · B = A1*B1 + A2*B2 + ... + An*Bn
+
+Den säger hur mycket vektorerna pekar åt samma håll totalt.
+
+Men: Om vektorerna är långa (stora tal) blir produkten stor även om riktningen inte är exakt samma.
+
+Exempel:
+- Kort vektor C = [1, 0]
+- Lång vektor D = [10, 0]
+
+C · D = 1*10 + 0*0 = 10
+
+Skalarprodukten = 10 → ser stor ut, men det är bara för att D är lång,
+inte för att de verkligen är mer lika i riktning.
+
+
+2. Vektorlängd (normen)
+------------------------
+Längden av en vektor A kallas ||A||:
+
+Pythagoras sats!
+
+||A|| = sqrt(A1² + A2² + ... + An²)
+
+Den mäter hur “stor” vektorn är, oavsett riktning.
+
+- Kort vektor → liten längd
+- Lång vektor → stor längd
+
+
+3. Normalisering – dela med längden
+------------------------------------
+Kosinuslikhet:
+
+cos_sim(A, B) = (A · B) / (||A|| * ||B||)
+
+Steg för steg:
+1. Ta skalarprodukten → mått på överensstämmelse i riktning
+2. Beräkna längderna på båda vektorerna → hur stora de är
+3. Dela skalarprodukten med produkten av längderna → tar bort påverkan av vektorlängd
+
+
+4. Intuition
+-------------
+Vi vill mäta endast vinkeln mellan vektorerna, inte storleken.
+
+cos(θ) = (A · B) / (||A|| * ||B||)
+
+- θ = 0°   → cos = 1   → exakt samma riktning
+- θ = 90°  → cos = 0   → vinkelräta, inga gemensamma drag
+- θ = 180° → cos = -1  → motsatt riktning
+
+
+5. Exempel med tal
+-------------------
+A = [3, 4], B = [6, 8]
+
+Skalarprodukt:
+A · B = 3*6 + 4*8 = 18 + 32 = 50
+
+Längder:
+||A|| = sqrt(3² + 4²) = 5
+||B|| = sqrt(6² + 8²) = 10
+
+Kosinuslikhet:
+cos_sim(A, B) = 50 / (5*10) = 50/50 = 1
+
+Tolkning:
+A och B pekar exakt åt samma håll, även om B är dubbelt så lång.
+Dela med längden tar bort effekten av vektorns storlek och mäter endast riktning.
+
+
+💡 Sammanfattning i enkla steg:
+--------------------------------
+1. Multiplicera motsvarande element → skalarprodukt
+2. Summera → total “överensstämmelse”
+3. Beräkna längder → hur stora vektorerna är
+4. Dela skalarprodukt med längderna → får ren riktning, alltså kosinuslikhet

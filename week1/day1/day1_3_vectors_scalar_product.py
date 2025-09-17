@@ -4,10 +4,6 @@ import matplotlib.pyplot as plt
 v1 = np.array([1, 2])
 v2 = np.array([2, 3])
 
-# skalär produkt - hur lika pilarnas riktingar är (jämföra två linjer/pilar) 
-# Dot positiv och stort → pilar nästan parallella
-# Dot = 0 → pilar vinkelräta (90°)
-# Dot negativ → pilar pekar åt motsatt håll
 
 # v1 * v2 = x1*x2 + y1*y2
 
