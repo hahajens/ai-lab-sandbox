@@ -28,6 +28,23 @@ print()
 # V (Value) = Innehållet som ska vägas ihop
 # Q = X @ W_Q, K = X @ W_K, V = X @ W_V
 
+# | Token    | Query söker efter | Fokuserar på        | Ny betydelse efter attention |
+# | :------- | :---------------- | :------------------ | :--------------------------- |
+# | “Jag”    | subjekt           | sig själv           | fortfarande “Jag”            |
+# | “älskar” | känsla, verb      | sig själv + “kaffe” | “älskar (kaffe)”             |
+# | “kaffe”  | substantiv        | “älskar”            | “kaffe (som älskas)”         |
+
+
+# | Steg | Formel              | Förklaring                           |
+# | ---- | ------------------- | ------------------------------------ |
+# | 1    | Q, K, V = X·W_Q/K/V | Skapa fråge-, nyckel-, värdevektorer |
+# | 2    | QK^T                | Likhet mellan tokens                 |
+# | 3    | / √d_k              | Skala ner/normalisera för stabilitet |
+# | 4    | softmax             | Gör vikter (fokusnivåer)             |
+# | 5    | × V                 | Kombinera information                |
+
+
+
 W_Q = np.array([[0.8, 0.1, 0.3], [0.2, 0.9, 0.5], [0.1, 0.4, 0.7]])
 W_K = np.array([[0.5, 0.2, 0.1], [0.1, 0.7, 0.3], [0.3, 0.4, 0.8]])
 W_V = np.array([[0.2, 0.6, 0.1], [0.8, 0.1, 0.3], [0.5, 0.4, 0.9]])
